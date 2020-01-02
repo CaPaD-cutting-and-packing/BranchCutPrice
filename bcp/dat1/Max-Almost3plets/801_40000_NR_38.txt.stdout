@@ -1,0 +1,46 @@
+bcp.cfg will be created after work.
+
+Some demands missing/bad format, assumed 1
+
+  LP VAL=266, N Cols = 1706 
+  LP VAL=265.1779367134037, N Cols = 2808 
+  LP VAL=265.0192922219674, N Cols = 3888 
+  LP VAL=265.006541339608, N Cols = 4968 
+  LP VAL=265.0038232779111, N Cols = 6048 
+  LP VAL=265.0023126495411, N Cols = 7128 
+  LP VAL=265.0015178489629, N Cols = 8208 
+  LP VAL=265.0009726042001, N Cols = 9288 
+  LP VAL=265.0005906979949, N Cols = 10368 
+  LP VAL=265.0002717352007, N Cols = 11408 
+  LP VAL=265.0001407801818, N Cols = 12475 
+  LP VAL=265.0000680497168, N Cols = 13543  
+
+  BB Col Gen has taken >1e+06 steps (see settings [BB]) and not found any solution with neg red cost. After 2e+08 steps (see BB.nSteps), automatic switching to KP col gen and AFF branching --- to do it manually, set:
+ CSP1.fRootPricing=1, BCP.fLocalUB=0 and seem better BCP.fLocaLReduce=0 with Subgr.nIterMax=0.  For the faster AFF branching, set BCP.nBranch=1, CSP1.nHP=1,  and BCP1.maxCuts=0 and better CSP1.fModelEquality=1 (see README)
+
+
+
+  LP VAL=265.0000357368159, N Cols = 14623 
+  LP VAL=265.0000309061552, N Cols = 15667 
+  LP VAL=265.0000143088573, N Cols = 16747 
+  LP VAL=265.0000109583879, N Cols = 17821  
+
+  BB Col Gen has taken 2.00001e+08 steps (see settings [BB]) and not found any solution with neg red cost. Switching to KP col gen and AFF branching (see README)
+
+
+ RESTARTING INSTANCE... 
+
+  LP VAL=266.0000000004667, N Cols = 1001 
+ Unexpected CPX ERROR: optimal with unscaled infeasibilities
+Solution infeasible...
+Turning on aggressive scaling and calling dual simplex method...
+
+  LP VAL=266, N Cols = 2002 
+ Unexpected CPX ERROR: optimal with unscaled infeasibilities
+Solution infeasible...
+Turning on aggressive scaling and calling dual simplex method...
+
+ Unexpected CPX ERROR: optimal with unscaled infeasibilities
+ LPerr?_
+"dat1/801_40000_NR_38.txt" #1 U266 L-1e+100 100% n2639 m0 nd0 Nn0/0 d0 LR 0/0
+"dat1/801_40000_NR_38.txt" #1 U266 L-1e+100 100% n2639 m0 nd0 Nn0/0 d0 LR 0/0 STAT LPErr

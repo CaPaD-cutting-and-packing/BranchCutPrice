@@ -1,0 +1,39 @@
+
+Some demands missing/bad format, assumed 1
+
+  LP VAL=266, N Cols = 1624 
+  LP VAL=265.1601306345942, N Cols = 2641 
+  LP VAL=265.017653808759, N Cols = 3651 
+  LP VAL=265.0048376199404, N Cols = 4661 
+  LP VAL=265.0028870372943, N Cols = 5671 
+  LP VAL=265.0018740264908, N Cols = 6681 
+  LP VAL=265.0011095508403, N Cols = 7691 
+  LP VAL=265.0007906235477, N Cols = 8701 
+  LP VAL=265.0005202934, N Cols = 9711 
+  LP VAL=265.0003641820155, N Cols = 10721 
+  LP VAL=265.0002030653252, N Cols = 11731 
+  LP VAL=265.0000608983989, N Cols = 12735  
+
+  BB Col Gen has taken >1e+06 steps (see settings [BB]) and not found any solution with neg red cost. After 2e+08 steps (see BB.nSteps), automatic switching to KP col gen and AFF branching --- to do it manually, set:
+ CSP1.fRootPricing=1, BCP.fLocalUB=0 and seem better BCP.fLocaLReduce=0 with Subgr.nIterMax=0.  For the faster AFF branching, set BCP.nBranch=1, CSP1.nHP=1,  and BCP1.maxCuts=0 and better CSP1.fModelEquality=1 (see README)
+
+
+
+  LP VAL=265.0000310479276, N Cols = 13745  
+
+  BB Col Gen has taken 2.00001e+08 steps (see settings [BB]) and not found any solution with neg red cost. Switching to KP col gen and AFF branching (see README)
+
+
+ RESTARTING INSTANCE... 
+
+  LP VAL=266, N Cols = 1001 
+  LP VAL=265.9999999999778, N Cols = 2002 
+ Unexpected CPX ERROR: optimal with unscaled infeasibilities
+Solution infeasible...
+Changing scaling to -1
+Turning off preprocessing...
+
+ Unexpected CPX ERROR: optimal with unscaled infeasibilities
+ LPerr?_
+"801_40000_NR_17.txt" #1 U266 L-1e+100 100% n2703 m0 nd0 Nn0/0 d0 LR 0/0
+"801_40000_NR_17.txt" #1 U266 L-1e+100 100% n2703 m0 nd0 Nn0/0 d0 LR 0/0 STAT LPErr

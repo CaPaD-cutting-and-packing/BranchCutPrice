@@ -1,0 +1,49 @@
+
+2
+35
+     5     33
+     2    110
+
+
+
+
+The initial LP solution: time=0
+
+
+File: n2  Instance No. 1
+Fri Feb 10 16:14:11 2006
+
+LP solution: lpval=11 lpbnd=11
+
+5.5:   5  5  obj=1\\
+5.5:   1 15  obj=1\\
+
+
+
+
+
+
+File: n2  Instance No. 1
+Fri Feb 10 16:14:11 2006
+
+LP0 Time: 0 IPTime: 0 The best integer solution (11):
+
+5:   5  5  obj=1\\
+5:   1 15  obj=1\\
+1:   3 10  obj=1\\
+
+
+
+The last LP solution 
+
+
+File: n2  Instance No. 1
+Fri Feb 10 16:14:11 2006
+
+LP solution: lpval=11 lpbnd=11
+
+5.5:   5  5  obj=1\\
+5.5:   1 15  obj=1\\
+
+
+

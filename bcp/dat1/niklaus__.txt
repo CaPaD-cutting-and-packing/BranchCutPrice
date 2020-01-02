@@ -1,0 +1,54 @@
+
+5
+5
+     2      1
+     2      1
+     1      1
+     1      2
+     1      1
+
+
+
+
+The initial LP solution: time=0
+
+
+File: niklaus  Instance No. 1
+Thu Feb  9 16:40:35 2006
+
+LP solution: lpval=1.6 lpbnd=2
+
+0.4:   1  1  1  0  0  obj=1\\
+0.6:   1  0  0  2  1  obj=1\\
+0.2:   0  1  1  2  0  obj=1\\
+0.4:   0  1  1  1  1  obj=1\\
+
+
+
+
+
+
+File: niklaus  Instance No. 1
+Thu Feb  9 16:40:35 2006
+
+LP0 Time: 0 IPTime: 0 The best integer solution (2):
+
+1:   1  0  0  2  1  obj=1\\
+1:   0  1  1  2  0  obj=1\\
+
+
+
+The last LP solution 
+
+
+File: niklaus  Instance No. 1
+Thu Feb  9 16:40:35 2006
+
+LP solution: lpval=1.6 lpbnd=2
+
+2:   0  0  0 -1  0  obj=0\\
+1:   1  0  0  2  1  obj=1\\
+1:   0  1  1  2  0  obj=1\\
+
+
+

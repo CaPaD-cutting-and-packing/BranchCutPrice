@@ -1,0 +1,6 @@
+2015-03-18   Before trying a change of scaling in the prev issue, solving the LP from scratch (CPXPARAM_Advance). Finally found this!!
+2015-03-10   On 801_40000_* examples, CPLEX 12.6 had 'optimal with unscaled infeasibilities'. Added a switch to aggressive scaling and a call to CPXdualopt. Actually, in CPLEX 12.6.1 this did not occur
+2015-02-26   The above problem arises probably in Compile Cuts. Changing u's comparison to be between their float()s removed the problem in the same setting. Runtime worse on that instance in that setting (double as long)
+2015-02-25   Checking if a new SA cut is not in the local pool, even if it is not in the global. Necessary on hard28#22 under CentOS.
+2014-10-30   Node-independent MIP rounding with cutoff parameter
+2014-09      Reduced CPLEx LP tolerances to achieve stability on large instances 

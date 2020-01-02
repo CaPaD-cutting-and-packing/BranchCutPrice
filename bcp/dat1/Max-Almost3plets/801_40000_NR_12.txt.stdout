@@ -1,0 +1,35 @@
+
+Some demands missing/bad format, assumed 1
+
+  LP VAL=266, N Cols = 1724 
+  LP VAL=265.6884038392259, N Cols = 2773 
+  LP VAL=265.0607994566288, N Cols = 3862 
+  LP VAL=265.0082370084265, N Cols = 4952 
+  LP VAL=265.0043566968707, N Cols = 6042 
+  LP VAL=265.0027589852556, N Cols = 7132 
+  LP VAL=265.0017080080759, N Cols = 8222 
+  LP VAL=265.001020257218, N Cols = 9312 
+  LP VAL=265.0004809170386, N Cols = 10402 
+  LP VAL=265.0001748052234, N Cols = 11447 
+  LP VAL=265.0000625625626, N Cols = 12491  
+
+  BB Col Gen has taken >1e+06 steps (see settings [BB]) and not found any solution with neg red cost. After 2e+08 steps (see BB.nSteps), automatic switching to KP col gen and AFF branching --- to do it manually, set:
+ CSP1.fRootPricing=1, BCP.fLocalUB=0 and seem better BCP.fLocaLReduce=0 with Subgr.nIterMax=0.  For the faster AFF branching, set BCP.nBranch=1, CSP1.nHP=1,  and BCP1.maxCuts=0 and better CSP1.fModelEquality=1 (see README)
+
+
+ 
+
+  BB Col Gen has taken 2.00001e+08 steps (see settings [BB]) and not found any solution with neg red cost. Switching to KP col gen and AFF branching (see README)
+
+
+ RESTARTING INSTANCE... 
+
+  LP VAL=266, N Cols = 1001 
+ Unexpected CPX ERROR: optimal with unscaled infeasibilities
+Solution infeasible...
+Turning on aggressive scaling and calling dual simplex method...
+
+ Unexpected CPX ERROR: optimal with unscaled infeasibilities
+ LPerr?_
+"dat1/801_40000_NR_12.txt" #1 U266 L-1e+100 100% n1988 m0 nd0 Nn0/0 d0 LR 0/0
+"dat1/801_40000_NR_12.txt" #1 U266 L-1e+100 100% n1988 m0 nd0 Nn0/0 d0 LR 0/0 STAT LPErr

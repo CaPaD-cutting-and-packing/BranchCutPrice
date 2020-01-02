@@ -1,0 +1,52 @@
+
+3
+136
+     9     32
+     7     28
+     5     12
+
+
+
+
+The initial LP solution: time=0
+
+
+File: n3  Instance No. 1
+Fri Feb 10 16:46:01 2006
+
+LP solution: lpval=4 lpbnd=4
+
+1:   4 10  6  obj=1\\
+2:  14  0  2  obj=1\\
+1:   0 18  2  obj=1\\
+
+
+
+
+
+
+File: n3  Instance No. 1
+Fri Feb 10 16:46:01 2006
+
+LP0 Time: 0 IPTime: 0 The best integer solution (4):
+
+1:   4 10  6  obj=1\\
+2:  14  0  2  obj=1\\
+1:   0 18  2  obj=1\\
+
+
+
+The last LP solution 
+
+
+File: n3  Instance No. 1
+Fri Feb 10 16:46:01 2006
+
+LP solution: lpval=4 lpbnd=4
+
+1:   4 10  6  obj=1\\
+2:  14  0  2  obj=1\\
+1:   0 18  2  obj=1\\
+
+
+

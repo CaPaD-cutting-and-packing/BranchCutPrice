@@ -1,0 +1,668 @@
+
+Subject:
+Re: Tolerances and cuts
+From:
+Gleb Belov <bg37@gmx.net>
+Date:
+11/16/2012 02:15 PM
+To:
+"Ethan L. Schreiber" <ethan@cs.ucla.edu>
+
+Hi,
+
+I looked at hard28... best works with 'no cuts' or with 'maxcuts=1', then we obtain similar times as in the paper. Moreover, all eps at 1e-6 are better, both with and without cuts.
+
+The today's version (see CaPaD) solves all your instances without cuts and branching with default params.
+
+Best,
+gleb
+
+On 11/15/2012 09:09 PM, Ethan L. Schreiber wrote:
+> Hi Gleb,
+>
+> That all sounds great. It might take me a little time to integrate the
+> code as I am working on some other things. As soon as I get to it, I
+> will get you some example problems.
+>
+> Sincerely,
+>
+> Ethan
+>
+> On Thu, Nov 15, 2012 at 5:40 AM, Gleb Belov <bg37@gmx.net> wrote:
+>> Dear Ethan,
+>>
+>> first I cleaned up the code: compiled it with -Wconversion and looked if all
+>> conversions were fine (size -> double, size ->int). There was nothing
+>> suspicious, but this is itself good to know.
+>>
+>> Then I cleaned up the handling of tolerances. We have now 5 types of
+>> tolerances: eps for primal/dual variables (xeps/deps), for reduced costs
+>> (rceps), for the objective value (the_value*veps) and the tolerance inside
+>> the b&b proc for pricing (bb_eps) - all those eps I clearly defined as
+>> parameters of the problem class CSP1. After that I set all ..eps = 1e-8
+>> except for veps = 1e-5 and was able to solve all your 4 instances. However,
+>> in problem45 and in 27items_prob10 the first LP solution had the value
+>> 3.00000xyz... which required the big veps for correct rounding and one
+>> cutting-planes iteration for optimum.
+>>
+>> Then I changed bb_eps to 1e-12. After that in 27items_prob10, the initial LP
+>> solution became 3. In fact, there were many of them, with one integral, so
+>> after LP0 it was optimal.
+>>
+>> I advise you to set outputLevel to 2 in all classes, so you might see more
+>> about the process.
+>>
+>> One more improvement: now I look after every LP call if the solution is
+>> integer. This allowed the recognition of an optimum in some instances
+>> faster.
+>>
+>> I was trying to understand why the LP0 value was significantly different
+>> from 3... I looked at the basis matrix (see e.g. problem45.dat__.txt), it is
+>> not ill-conditioned.... And bb_eps=1e-12 helps in one instance. Probably,
+>> the relatively small items (1/10000 of L) are to blame.
+>>
+>> A little bad news: the hard28 instances take a little more time now!
+>>
+>> Now I am sure you get even more strange instances! Let me have them. The new
+>> code is online.
+>>
+>> Best,
+>> gleb
+>>
+>> On 11/14/2012 03:30 AM, Ethan L. Schreiber wrote:
+>>> Hi Gleb,
+>>>
+>>> Even with the new code, there are problems.  Attached is one example,
+>>> the optimal solution is 3. It worked for 1e-05 but not for other
+>>> values.  I tried 1e-08, 1e-07, 1e-06. I can create other examples if
+>>> necessary.
+>>>
+>>> Ethan
+>>>
+>>> On Tue, Nov 13, 2012 at 2:12 PM, Ethan L. Schreiber <ethan@cs.ucla.edu>
+>>> wrote:
+>>>> Hi Gleb,
+>>>>
+>>>> I downloaded and compiled the new code. It produces different results
+>>>> for the same configuration file. I will integrate the new code base
+>>>> into my code and see how it works. I'll let you know.
+>>>>
+>>>> Ethan
+>>>>
+>>>> On Tue, Nov 13, 2012 at 6:20 AM, Gleb Belov <bg37@gmx.net> wrote:
+>>>>> Dear Ethan,
+>>>>>
+>>>>> good morning... Setting both eps to 1e-6 produces the correct result for
+>>>>> all
+>>>>> your 3 examples. It may happen that I made relevant changes to the code
+>>>>> (I
+>>>>> made some few along with adaptation to long long). The new code is on
+>>>>> the
+>>>>> CaPaD site. Please let me know if you still have issues. They may be
+>>>>> caused
+>>>>> by the different hardware or a different CPLEX version (I use CPLEX
+>>>>> 12.4.1,
+>>>>> 32-bit).
+>>>>>
+>>>>> Probably I shall look at problem45 again. But it is possible that the
+>>>>> error
+>>>>> 8.5e-7 is just round-off ... Still, it is thinkable to adjust the
+>>>>> strategy
+>>>>> with tolerances to produce more stable results.
+>>>>>
+>>>>> Best
+>>>>> gleb
+>>>>>
+>>>>>
+>>>>> On 11/13/2012 12:08 PM, Ethan L. Schreiber wrote:
+>>>>>> Hi Gleb,
+>>>>>>
+>>>>>> Here is one more problem for you with the same behavior, works for
+>>>>>> 1e-8, broken for 1e-5. Again, 3 bins is optimal.
+>>>>>>
+>>>>>> Let me know if you need more examples. Right now, I have to convert
+>>>>>> from my format to yours by hand. If you need a bunch, I could whip up
+>>>>>> a program to convert automatically and give you more. For now, I will
+>>>>>> go to sleep, its about time!
+>>>>>>
+>>>>>> I'm glad to hear that you are getting some benefit out of this as
+>>>>>> well! Thank you for your help.
+>>>>>>
+>>>>>> Sincerely,
+>>>>>>
+>>>>>> Ethan
+>>>>>>
+>>>>>> On Tue, Nov 13, 2012 at 2:59 AM, Ethan L. Schreiber <ethan@cs.ucla.edu>
+>>>>>> wrote:
+>>>>>>> Hi Gleb,
+>>>>>>>
+>>>>>>> It is almost 3am here now. I am working on my oral qualifying exam for
+>>>>>>> my PhD so sleep is not a luxury I am afforded. :)
+>>>>>>>
+>>>>>>> Attached is an example where 1e-5 is wrong but 1e-8 is fine. The
+>>>>>>> correct answer is 3 bins.
+>>>>>>>
+>>>>>>> Ethan
+>>>>>>>
+>>>>>>> On Tue, Nov 13, 2012 at 2:17 AM, Gleb Belov <bg37@gmx.net> wrote:
+>>>>>>>> Good time of the day (are you having night now??),
+>>>>>>>>
+>>>>>>>> I am interested because I have time for that (my current project
+>>>>>>>> could
+>>>>>>>> probably benefit from similar issues) and want to provide this
+>>>>>>>> software
+>>>>>>>> to
+>>>>>>>> others.
+>>>>>>>>
+>>>>>>>> You mean there are instances where 1e-5 is wrong but 1e-8 fine??
+>>>>>>>> Please
+>>>>>>>> send
+>>>>>>>> me some! Otherwise you can send me more instances needing large eps.
+>>>>>>>>
+>>>>>>>> Gleb
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> On 11/13/2012 11:00 AM, Ethan L. Schreiber wrote:
+>>>>>>>>> Hi Gleb,
+>>>>>>>>>
+>>>>>>>>> I have done some more experiments. It seems that I need to set deps
+>>>>>>>>> and bb_eps to different values for each instance to get optimal
+>>>>>>>>> answers. For some, 1e-08 works, for others 1e-06 and others still
+>>>>>>>>> 1e-05. There does not seem to be a rule like if I make the exponent
+>>>>>>>>> larger or smaller, more problems are correct. It seems it has to be
+>>>>>>>>> the right exponent for the right instance.
+>>>>>>>>>
+>>>>>>>>> Is this simply the limitation of branch-and-cut-and-price? Are there
+>>>>>>>>> inherently precision issues with large input values? If I understand
+>>>>>>>>> these parameters correctly, a value of1e-08  means that in order to
+>>>>>>>>> be
+>>>>>>>>> considered integer, the variable has to have value within 1e-08 of
+>>>>>>>>> an
+>>>>>>>>> integer value. In this case, I would think that smaller values would
+>>>>>>>>> be more likely to lead to optimal solutions. However,
+>>>>>>>>> experimentally,
+>>>>>>>>> this is not the case. For some problems, larger values of deps and
+>>>>>>>>> bbeps work, for others, smaller.
+>>>>>>>>>
+>>>>>>>>> Do you have any suggestion for further parameter tuning I could do
+>>>>>>>>> to
+>>>>>>>>> get optimal answers? It doesn't seem right to have to know the
+>>>>>>>>> optimal
+>>>>>>>>> solution, then tune the parameters to get it.
+>>>>>>>>>
+>>>>>>>>> Sincerely,
+>>>>>>>>>
+>>>>>>>>> Ethan
+>>>>>>>>>
+>>>>>>>>> On Mon, Nov 12, 2012 at 3:46 PM, Ethan L. Schreiber
+>>>>>>>>> <ethan@cs.ucla.edu>
+>>>>>>>>> wrote:
+>>>>>>>>>> Hi Gleb,
+>>>>>>>>>>
+>>>>>>>>>> Thank you for your help, what you suggested works. For the input in
+>>>>>>>>>> question, I needed to set deps and bb_eps to 1e-05 to get it to
+>>>>>>>>>> work.
+>>>>>>>>>> (I also ran the same problem with smaller bin capacity for which
+>>>>>>>>>> 1e-06
+>>>>>>>>>> no longer works.) However, as expected, this slows down
+>>>>>>>>>> performance.
+>>>>>>>>>> The limited precision of floating point numbers is an interesting
+>>>>>>>>>> concern with LP. It is certainly outside my domain of expertise, I
+>>>>>>>>>> would not know the scientific method for choosing a proper
+>>>>>>>>>> threshold.
+>>>>>>>>>> For now, I will just use experimental results to set it.
+>>>>>>>>>>
+>>>>>>>>>> Thank you again, I am continuously amazed by your generosity with
+>>>>>>>>>> your
+>>>>>>>>>> time for a stranger.
+>>>>>>>>>>
+>>>>>>>>>> Sincerely,
+>>>>>>>>>>
+>>>>>>>>>> Ethan
+>>>>>>>>>>
+>>>>>>>>>> On Mon, Nov 12, 2012 at 5:49 AM, Gleb Belov <bg37@gmx.net> wrote:
+>>>>>>>>>>> Hi again,
+>>>>>>>>>>>
+>>>>>>>>>>> as I said, it print lpval=3 and lpbnd=4 which looked strange. I
+>>>>>>>>>>> ran
+>>>>>>>>>>> it
+>>>>>>>>>>> with
+>>>>>>>>>>> globalOutputLevel=4 and saw after the last LP:  LPv=3
+>>>>>>>>>>> frac=8.44424e-07,
+>>>>>>>>>>> i.e., the fractional part is 8.5e-7 > 0, thus almost 1e-6. I
+>>>>>>>>>>> changed
+>>>>>>>>>>> the
+>>>>>>>>>>> eps-tolerances to 1e-6:
+>>>>>>>>>>>
+>>>>>>>>>>> CSP1.                deps   1e-06  'eps for dual multipliers
+>>>>>>>>>>> CSP1.              bb_eps   1e-06  'eps for b&b col gen
+>>>>>>>>>>>
+>>>>>>>>>>> -- then it worked well. Actually, 1e-6 is usual in numerical
+>>>>>>>>>>> applications.
+>>>>>>>>>>> But such behaviour is not ok here because the LP constraints are
+>>>>>>>>>>> not
+>>>>>>>>>>> so
+>>>>>>>>>>> big-valued... This should be explored.
+>>>>>>>>>>>
+>>>>>>>>>>> Your remark about errors when many items fit in a bin confirms the
+>>>>>>>>>>> conjecture about tolerances - LP matrix becomes dense. For now,
+>>>>>>>>>>> you
+>>>>>>>>>>> can
+>>>>>>>>>>> play
+>>>>>>>>>>> with eps, take even 1e-5 or -4 as long as it works.
+>>>>>>>>>>>
+>>>>>>>>>>> I heard all platforms have long long at least 64 bits long and
+>>>>>>>>>>> some
+>>>>>>>>>>> even
+>>>>>>>>>>> 128...
+>>>>>>>>>>>
+>>>>>>>>>>> valgrind complains even about STL functions' branching. I think I
+>>>>>>>>>>> cared
+>>>>>>>>>>> to
+>>>>>>>>>>> loose only some limited amount of memory (using new for static
+>>>>>>>>>>> vars
+>>>>>>>>>>> was
+>>>>>>>>>>> necessary because of abstract classes)
+>>>>>>>>>>>
+>>>>>>>>>>> Best
+>>>>>>>>>>> gleb
+>>>>>>>>>>>
+>>>>>>>>>>>
+>>>>>>>>>>>> Thank you so much for looking into this. I actually use
+>>>>>>>>>>>> <stdint.h>
+>>>>>>>>>>>> and
+>>>>>>>>>>>> int64_t so I don't get into the ambiguity of long vs int vs long
+>>>>>>>>>>>> long.
+>>>>>>>>>>>> This way, I know the int has 64 bits no matter what platform I'm
+>>>>>>>>>>>> running on.
+>>>>>>>>>>>>
+>>>>>>>>>>>> I will also say that on top of this type of error, I also get
+>>>>>>>>>>>> segmentation error  problems as well as core dumps and stack
+>>>>>>>>>>>> errors.
+>>>>>>>>>>>> I
+>>>>>>>>>>>> ran bcp through valgrind and there seem to be a number of memory
+>>>>>>>>>>>> leaks. In case you are not familiar with valgrind since it is a
+>>>>>>>>>>>> linux
+>>>>>>>>>>>> program, it is a memory checker.  (I highly recommend it, it is
+>>>>>>>>>>>> magic)
+>>>>>>>>>>>>
+>>>>>>>>>>>>       One major source of these leaks is the Option configuration
+>>>>>>>>>>>> system.
+>>>>>>>>>>>> For example, at around line 900 of main.c, you are instantiating
+>>>>>>>>>>>> a
+>>>>>>>>>>>> static variable as follows:
+>>>>>>>>>>>>
+>>>>>>>>>>>> opt::OptSection Solver::opt
+>>>>>>>>>>>>        ("Solver", "The solver framework",
+>>>>>>>>>>>>        Solver::Options(), opt::SolverCfg(), 5000);
+>>>>>>>>>>>>
+>>>>>>>>>>>> Solver::Options()  calls this templated function in myopt.h:
+>>>>>>>>>>>>
+>>>>>>>>>>>>        template <class type,class t2>
+>>>>>>>>>>>>        VirtualOption * MakeOpt
+>>>>>>>>>>>>        (type *pv,const t2 def,const char*n,const char *d) {
+>>>>>>>>>>>>          return (VirtualOption*)
+>>>>>>>>>>>>            (new Option<type>(pv,(type)def,n,d));
+>>>>>>>>>>>>        } //
+>>>>>>>>>>>>
+>>>>>>>>>>>> Which has "new Option" which is never deleted. This perhaps is
+>>>>>>>>>>>> not a
+>>>>>>>>>>>> problem as the static memory is instantiated once at startup.
+>>>>>>>>>>>> There
+>>>>>>>>>>>> are other errors reported like branching on unitialized
+>>>>>>>>>>>> variables.
+>>>>>>>>>>>> In
+>>>>>>>>>>>> case you are interested, I have included a stack trace from
+>>>>>>>>>>>> valgrind.
+>>>>>>>>>>>> I have modified your code somewhat to add my interface so some
+>>>>>>>>>>>> line
+>>>>>>>>>>>> numbers might be a little off.  (The files I have modified are
+>>>>>>>>>>>> main.cpp, probl_csp1.cpp, probl_cp22.h, probl_csp1.h, problem.h
+>>>>>>>>>>>> and
+>>>>>>>>>>>> solver.h).
+>>>>>>>>>>>>
+>>>>>>>>>>>> Perhaps there is some issue with 64 bit numbers as I don't run
+>>>>>>>>>>>> into
+>>>>>>>>>>>> problems with 32 bit.  I have also noticed that the problems tend
+>>>>>>>>>>>> to
+>>>>>>>>>>>> occur with large numbers of elements per bin in optimal
+>>>>>>>>>>>> solutions.
+>>>>>>>>>>>> So
+>>>>>>>>>>>> if I have 30 input elements, if the optimal solution takes 4
+>>>>>>>>>>>> bins,
+>>>>>>>>>>>> it
+>>>>>>>>>>>> is much more likely to have an error than if the optimal solution
+>>>>>>>>>>>> takes 8 bins.
+>>>>>>>>>>>>
+>>>>>>>>>>>> Hopefully some of this information is helpful to you. Thank you
+>>>>>>>>>>>> again
+>>>>>>>>>>>> for looking at this, I very much appreciate it.
+>>>>>>>>>>>>
+>>>>>>>>>>>> Sincerely,
+>>>>>>>>>>>>
+>>>>>>>>>>>> Ethan
+>>>>>>>>>>>>
+>>>>>>>>>>>> On Mon, Nov 12, 2012 at 1:35 AM, Gleb Belov <bg37@gmx.net> wrote:
+>>>>>>>>>>>>> Hi Ethan,
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> I just got my code to work on the example (on Intel i5, GNU g++
+>>>>>>>>>>>>> I
+>>>>>>>>>>>>> need
+>>>>>>>>>>>>> "long
+>>>>>>>>>>>>> long"). It gives both initial & final LP solutions with total
+>>>>>>>>>>>>> sum
+>>>>>>>>>>>>> of
+>>>>>>>>>>>>> x_j
+>>>>>>>>>>>>> equal to 2.999999.... but reports LP bound of 4 in both cases
+>>>>>>>>>>>>> and
+>>>>>>>>>>>>> in
+>>>>>>>>>>>>> the
+>>>>>>>>>>>>> latter case even LP value of 4 !!!
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> either it is the tolerances or round-offs, no idea yet. Maybe it
+>>>>>>>>>>>>> counts
+>>>>>>>>>>>>> some
+>>>>>>>>>>>>> slack variables as your error report showed
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> Gleb
+>>>>>>>>>>>>>
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> On 11/12/2012 02:53 AM, Ethan L. Schreiber wrote:
+>>>>>>>>>>>>>> Hi Gleb,
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> I have attached problem45.dat and solution45.txt. This problem
+>>>>>>>>>>>>>> is
+>>>>>>>>>>>>>> a
+>>>>>>>>>>>>>> Bin Packing problem with 27 input elements. Each number was
+>>>>>>>>>>>>>> generated
+>>>>>>>>>>>>>> uniformly at random between 0 and 2^48-1. I ran this problem
+>>>>>>>>>>>>>> using
+>>>>>>>>>>>>>> your solver (
+>>>>>>>>>>>>>> http://www.math.tu-dresden.de/~belov/Archive/bcp120828.7z
+>>>>>>>>>>>>>> )
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> $ ./bcp ./problem45.dat
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> The solution given was 4 bins (bcp->gub == bcp->glb == 4 after
+>>>>>>>>>>>>>> bcp-run() was called). As you can see from the file
+>>>>>>>>>>>>>> solution45.txt,
+>>>>>>>>>>>>>> the optimal solution should use only three bins.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> In order to get your code to work, I had to make two changes as
+>>>>>>>>>>>>>> follows:
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> - in bcp.cfg, set fEffectiveL to 0
+>>>>>>>>>>>>>> - in prob1_csp1.h, change line 41 from
+>>>>>>>>>>>>>>         int m,m0
+>>>>>>>>>>>>>> to
+>>>>>>>>>>>>>>         size m,m0
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> This is because when the input file is read, m is used to store
+>>>>>>>>>>>>>> the
+>>>>>>>>>>>>>> capacity temporarily and with a large capacity, it is not large
+>>>>>>>>>>>>>> enough.
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Perhaps there is some sort of precision error with the LP? If
+>>>>>>>>>>>>>> you
+>>>>>>>>>>>>>> could help me to understand how to fix this, I would very much
+>>>>>>>>>>>>>> appreciate it!
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Sincerely,
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> Ethan
+>>>>>>>>>>>>>>
+>>>>>>>>>>>>>> On Sun, Nov 11, 2012 at 2:33 AM, Ethan L. Schreiber
+>>>>>>>>>>>>>> <ethan@cs.ucla.edu>
+>>>>>>>>>>>>>> wrote:
+>>>>>>>>>>>>>>> Hi Gleb,
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> I am still working with your BCP code for solving the bin
+>>>>>>>>>>>>>>> packing
+>>>>>>>>>>>>>>> problem and am hoping that you might be able to help me with a
+>>>>>>>>>>>>>>> problem
+>>>>>>>>>>>>>>> I'm encountering. I understand that you are busy and perhaps
+>>>>>>>>>>>>>>> have
+>>>>>>>>>>>>>>> not
+>>>>>>>>>>>>>>> looked at this code in a long time so I will understand if you
+>>>>>>>>>>>>>>> don't
+>>>>>>>>>>>>>>> have any answers. You have been so generous with your code and
+>>>>>>>>>>>>>>> your
+>>>>>>>>>>>>>>> time already.
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> I have been working with input elements in the range [0,2^48]
+>>>>>>>>>>>>>>> so
+>>>>>>>>>>>>>>> these
+>>>>>>>>>>>>>>> are much larger than for example the instances in the hard 28
+>>>>>>>>>>>>>>> set.
+>>>>>>>>>>>>>>> Most of the time, your code works well and returns the correct
+>>>>>>>>>>>>>>> answer.
+>>>>>>>>>>>>>>> However, every once in a while, I get an error that looks like
+>>>>>>>>>>>>>>> this:
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> ----------------------------------------------------------------------------
+>>>>>>>>>>>>>>> glb=4 > gub=3!! llv=3
+>>>>>>>>>>>>>>> Checking the cols of the best solution:
+>>>>>>>>>>>>>>> Col 0. x=1:   0  0  0  0  0  0  0  1  1  1  1  0  0  1  0  0
+>>>>>>>>>>>>>>> 0
+>>>>>>>>>>>>>>> 1
+>>>>>>>>>>>>>>> 0
+>>>>>>>>>>>>>>> 1  1  0  1  0  0  0  obj=1 IS IN. rc=-4.27959e-07
+>>>>>>>>>>>>>>> Col 1. x=1:   1  1  0  1  0  0  0  0  0  0  0  1  0  0  1  1
+>>>>>>>>>>>>>>> 0
+>>>>>>>>>>>>>>> 0
+>>>>>>>>>>>>>>> 1
+>>>>>>>>>>>>>>> 0  0  0  0  0  0  1  obj=1 IS IN. rc=2.99858e-17
+>>>>>>>>>>>>>>> Col 2. x=1:   0  0  1  0  1  1  1  0  0  0  0  0  1  0  0  0
+>>>>>>>>>>>>>>> 1
+>>>>>>>>>>>>>>> 0
+>>>>>>>>>>>>>>> 0
+>>>>>>>>>>>>>>> 0  0  1  0  1  1  0  obj=1 IS IN. rc=2.02431e-16
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> Resolved LP value = 3
+>>>>>>>>>>>>>>> Checking that all invloved cuts are in...
+>>>>>>>>>>>>>>> Error. not cols[i].slackCut :src/belov/bcp_lp.cpp :54:Nov 10
+>>>>>>>>>>>>>>> 2012
+>>>>>>>>>>>>>>> Some error.
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> ----------------------------------------------------------------------------
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> I have made some changes to your code to allow me to call it
+>>>>>>>>>>>>>>> from
+>>>>>>>>>>>>>>> another C++ program with a struct as opposed to passing in
+>>>>>>>>>>>>>>> files.
+>>>>>>>>>>>>>>> I
+>>>>>>>>>>>>>>> replaced main() with this function:
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>          void executeBelovBCP( const BinPackingProblem
+>>>>>>>>>>>>>>> &problem,BinPackingStats &stats) {
+>>>>>>>>>>>>>>>            ss::Solver slv;
+>>>>>>>>>>>>>>>            ss::Solver::RWOptions(); // even if no files
+>>>>>>>>>>>>>>>            slv.processStruct(problem,stats);
+>>>>>>>>>>>>>>>          }
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> And added some support functions in main so I can read from my
+>>>>>>>>>>>>>>> struct:
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>          void Solver::processStruct(const BinPackingProblem
+>>>>>>>>>>>>>>> &problem,BinPackingStats &stats) {
+>>>>>>>>>>>>>>>            Env env;
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>            ProblemLoader pl(env);
+>>>>>>>>>>>>>>>            int readRes   = pl.Read(problem);
+>>>>>>>>>>>>>>>            auto_ptr<BCP> bcp(pl.GetSolver());
+>>>>>>>>>>>>>>>            bcp->firstinstance = true;
+>>>>>>>>>>>>>>>            bcp->Run();
+>>>>>>>>>>>>>>>          }
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>          int ProblemLoader::Read(const BinPackingProblem
+>>>>>>>>>>>>>>> &problem)
+>>>>>>>>>>>>>>> {
+>>>>>>>>>>>>>>>            m_infile = "nofile.dat";
+>>>>>>>>>>>>>>>            strcpy(m_prNm, problem.problemName.c_str());
+>>>>>>>>>>>>>>>            m_inst = 1;
+>>>>>>>>>>>>>>>            m_pr = new CSP1(m_penv, m_infile,m_inst,m_prNm);
+>>>>>>>>>>>>>>>            return m_pr->Read(problem);
+>>>>>>>>>>>>>>>          }
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> And also added one support function in probl_csp1.cpp:
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>          int CSP1::Read(const BinPackingProblem &problem) {
+>>>>>>>>>>>>>>>            m_L0 = problem.capacity;
+>>>>>>>>>>>>>>>            m_m = problem.N;      // TODO: This is not quite
+>>>>>>>>>>>>>>> right
+>>>>>>>>>>>>>>> if
+>>>>>>>>>>>>>>> there
+>>>>>>>>>>>>>>> are duplicates
+>>>>>>>>>>>>>>>            m_m0 = problem.N;
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>            m_pc0.resize(m_m0);
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>            for (int i=0;i<m_m0;i++) {
+>>>>>>>>>>>>>>>              m_pc0[i].l = problem.S[i];    // The item size
+>>>>>>>>>>>>>>>              m_pc0[i].b = 1;               // # of copies of
+>>>>>>>>>>>>>>> this
+>>>>>>>>>>>>>>> item,
+>>>>>>>>>>>>>>> TODO: Fix this, there might be duplicates
+>>>>>>>>>>>>>>>            }
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>            InitProblem();
+>>>>>>>>>>>>>>>            return 0;
+>>>>>>>>>>>>>>>          }
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> If you have any thoughts about what might be wrong, I would
+>>>>>>>>>>>>>>> very
+>>>>>>>>>>>>>>> much
+>>>>>>>>>>>>>>> appreciate it. Perhaps there is something wrong with my
+>>>>>>>>>>>>>>> bcp.cfg.
+>>>>>>>>>>>>>>> It
+>>>>>>>>>>>>>>> is
+>>>>>>>>>>>>>>> the default file with fEffectiveL set to 0 since it would run
+>>>>>>>>>>>>>>> out
+>>>>>>>>>>>>>>> of
+>>>>>>>>>>>>>>> memory with the 48 bit input numbers. Or maybe I forgot to
+>>>>>>>>>>>>>>> call
+>>>>>>>>>>>>>>> something while setting up the problem using my new functions?
+>>>>>>>>>>>>>>> It
+>>>>>>>>>>>>>>> is
+>>>>>>>>>>>>>>> puzzling because like I said, the vast majority of the time,
+>>>>>>>>>>>>>>> everything works fine. However, the occasional errors are
+>>>>>>>>>>>>>>> troublesome.
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> Any help would be greatly appreciated. Thank you again for all
+>>>>>>>>>>>>>>> of
+>>>>>>>>>>>>>>> your
+>>>>>>>>>>>>>>> help.
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> Sincerely,
+>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>> Ethan
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> -- 
+>>>>>>>>>>>>>
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> Du willst wissen, warum ich mitten im gelehrten Gespräch
+>>>>>>>>>>>>> abbreche,
+>>>>>>>>>>>>> um
+>>>>>>>>>>>>> einer
+>>>>>>>>>>>>> schönen Frau nachzublicken? Ich bedauere dich, mein Freund -
+>>>>>>>>>>>>> denn
+>>>>>>>>>>>>> das
+>>>>>>>>>>>>> war
+>>>>>>>>>>>>> die Frage eines Blinden.
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> Aristoteles
+>>>>>>>>>>>>> Ein Zufallszitat von mundraub.de
+>>>>>>>>>>>>>
+>>>>>>>>>>>>> Nochwas: Frauen, die meinen, Männer seien zu keiner innigen und
+>>>>>>>>>>>>> liebevollen
+>>>>>>>>>>>>> Beziehung fähig,
+>>>>>>>>>>>>> waren noch nie am Samstag in einer Autowaschanlage!
+>>>>>>>>>>>>>
+>>>>>>>>>>> -- 
+>>>>>>>>>>>
+>>>>>>>>>>>
+>>>>>>>>>>> Du willst wissen, warum ich mitten im gelehrten Gespräch abbreche,
+>>>>>>>>>>> um
+>>>>>>>>>>> einer
+>>>>>>>>>>> schönen Frau nachzublicken? Ich bedauere dich, mein Freund - denn
+>>>>>>>>>>> das
+>>>>>>>>>>> war
+>>>>>>>>>>> die Frage eines Blinden.
+>>>>>>>>>>>
+>>>>>>>>>>> Aristoteles
+>>>>>>>>>>> Ein Zufallszitat von mundraub.de
+>>>>>>>>>>>
+>>>>>>>>>>> Nochwas: Frauen, die meinen, Männer seien zu keiner innigen und
+>>>>>>>>>>> liebevollen
+>>>>>>>>>>> Beziehung fähig,
+>>>>>>>>>>> waren noch nie am Samstag in einer Autowaschanlage!
+>>>>>>>>>>>
+>>>>>>>> -- 
+>>>>>>>>
+>>>>>>>>
+>>>>>>>> Du willst wissen, warum ich mitten im gelehrten Gespräch abbreche, um
+>>>>>>>> einer
+>>>>>>>> schönen Frau nachzublicken? Ich bedauere dich, mein Freund - denn das
+>>>>>>>> war
+>>>>>>>> die Frage eines Blinden.
+>>>>>>>>
+>>>>>>>> Aristoteles
+>>>>>>>> Ein Zufallszitat von mundraub.de
+>>>>>>>>
+>>>>>>>> Nochwas: Frauen, die meinen, Männer seien zu keiner innigen und
+>>>>>>>> liebevollen
+>>>>>>>> Beziehung fähig,
+>>>>>>>> waren noch nie am Samstag in einer Autowaschanlage!
+>>>>>>>>
+>>>>> -- 
+>>>>>
+>>>>>
+>>>>> Du willst wissen, warum ich mitten im gelehrten Gespräch abbreche, um
+>>>>> einer
+>>>>> schönen Frau nachzublicken? Ich bedauere dich, mein Freund - denn das
+>>>>> war
+>>>>> die Frage eines Blinden.
+>>>>>
+>>>>> Aristoteles
+>>>>> Ein Zufallszitat von mundraub.de
+>>>>>
+>>>>> Nochwas: Frauen, die meinen, Männer seien zu keiner innigen und
+>>>>> liebevollen
+>>>>> Beziehung fähig,
+>>>>> waren noch nie am Samstag in einer Autowaschanlage!
+>>>>>
+>> -- 
+>>
+>>
+>> Du willst wissen, warum ich mitten im gelehrten Gespräch abbreche, um einer
+>> schönen Frau nachzublicken? Ich bedauere dich, mein Freund - denn das war
+>> die Frage eines Blinden.
+>>
+>> Aristoteles
+>> Ein Zufallszitat von mundraub.de
+>>
+>> Nochwas: Frauen, die meinen, Männer seien zu keiner innigen und liebevollen
+>> Beziehung fähig,
+>> waren noch nie am Samstag in einer Autowaschanlage!
+>>
+
+-- 
+
+
+Du willst wissen, warum ich mitten im gelehrten Gespräch abbreche, um einer schönen Frau nachzublicken? Ich bedauere dich, mein Freund - denn das war die Frage eines Blinden.
+
+Aristoteles
+Ein Zufallszitat von mundraub.de
+
+Nochwas: Frauen, die meinen, Männer seien zu keiner innigen und liebevollen Beziehung fähig,
+waren noch nie am Samstag in einer Autowaschanlage!
+

@@ -1,0 +1,61 @@
+
+3
+30
+    15      3
+    10      5
+     6      9
+
+
+
+
+The initial LP solution: time=0
+
+
+File: e3  Instance No. 1
+Thu Oct 30 16:10:55 2014
+
+LP solution: lpval=5.2 lpbnd=6
+
+0.8: 0:1 1:1 obj 1\\
+1: 0:2 obj 1\\
+1.2: 1:1 2:3 obj 1\\
+1: 1:3 obj 1\\
+1: 2:5 obj 1\\
+0.2: 0:1 2:2 obj 1\\
+
+
+
+
+
+
+File: e3  Instance No. 1
+Thu Oct 30 16:10:55 2014
+
+LP0 Time: 0 IPTime: 0.01 The best integer solution (6):
+
+1: 0:1 1:1 obj 1\\
+1: 0:2 obj 1\\
+1: 1:1 2:3 obj 1\\
+1: 1:3 obj 1\\
+1: 2:5 obj 1\\
+1: 2:1 obj 1\\
+
+
+
+The last LP solution 
+
+
+File: e3  Instance No. 1
+Thu Oct 30 16:10:55 2014
+
+LP solution: lpval=5.2 lpbnd=6
+
+0.8: 0:1 1:1 obj 1\\
+1: 0:2 obj 1\\
+1.2: 1:1 2:3 obj 1\\
+1: 1:3 obj 1\\
+1: 2:5 obj 1\\
+0.2: 0:1 2:2 obj 1\\
+
+
+

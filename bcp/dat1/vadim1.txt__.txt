@@ -1,0 +1,54 @@
+
+8
+70
+    30      1
+    28      1
+    18      1
+    15      1
+    14      1
+    13      1
+    11      1
+     5      2
+
+
+
+
+The initial LP solution: time=0
+
+
+File: vadim1.txt  Instance No. 1
+Wed Oct 17 15:24:46 2012
+
+LP solution: lpval=2 lpbnd=2
+
+1:   1  0  0  1  1  0  1  0  obj=1\\
+1:   0  1  1  0  0  1  0  2  obj=1\\
+
+
+
+
+
+
+File: vadim1.txt  Instance No. 1
+Wed Oct 17 15:24:46 2012
+
+LP0 Time: 0 IPTime: 0 The best integer solution (2):
+
+1:   1  0  0  1  1  0  1  0  obj=1\\
+1:   0  1  1  0  0  1  0  2  obj=1\\
+
+
+
+The last LP solution 
+
+
+File: vadim1.txt  Instance No. 1
+Wed Oct 17 15:24:46 2012
+
+LP solution: lpval=2 lpbnd=2
+
+1:   1  0  0  1  1  0  1  0  obj=1\\
+1:   0  1  1  0  0  1  0  2  obj=1\\
+
+
+

@@ -1,0 +1,243 @@
+0x99d4a0 1: Bad data.
+0x99d4a0 1: Error. d :inc/mystat.h :42:Feb  9 2006
+0x99d4a0 1: Error. im>=0 and jm>=0 :cpp/probl_csp1.cpp :163:Feb  9 2006
+0x99d4a0 1: Some error.
+0x99d4a0 1: Error. im>=0 and jm>=0 :cpp/probl_csp1.cpp :163:Feb  9 2006
+0x99d4a0 1: Some error.
+0x99d4a0 1: Error. im>=0 and jm>=0 :cpp/probl_csp1.cpp :163:Feb  9 2006
+0x99d4a0 1: Some error.
+0x99d4a0 0: gau3: No such file or directory
+0x99d4a0 0: gau3: No such file or directory
+0x99d4a0 0: ../dat1/e3: No such file or directory
+0x99d4a0 0: ../dat1/e3: No such file or directory
+0x846d5a0 0: 1: No such file or directory
+0x846d5a0 0: 1: No such file or directory
+0x846d5a0 0: 1: No such file or directory
+0x846d5a0 0: 1: No such file or directory
+0x846d5a0 2: Bad data.
+0x8cb2380 1: Error. &*it == pe :./inc/mytools.h :273:Aug 23 2011
+0x8cb2380 1: Some error.
+0x8cb2380 1: Error. d :./inc/mystat.h :42:Aug 23 2011
+0x8cb2380 1: Error. d :./inc/mystat.h :42:Aug 23 2011
+0x8cb2380 1: Error. d :./inc/mystat.h :42:Aug 23 2011
+0x8cdb680 55: Bad data.
+0x174c7c0 3: SVC: Some error.
+0x174c7c0 1: Error. l[i] > 0 && l[i] <= L && b[i] >= 0 :cpp/bkp_dp.cpp :108:Sep 26 2014
+0x174c7c0 1: Some error.
+0x174c7c0 1: Error. l[i] > 0 && l[i] <= L && b[i] >= 0 :cpp/bkp_dp.cpp :108:Sep 26 2014
+0x174c7c0 1: Some error.
+0x174e800 1: Segment violation
+0x174f8a0 1: gau3, instance 1: item 0, m=50: bad format, current line: ''
+0x174f8a0 1: Error. d :./inc/mystat.h :42:Oct  2 2014
+0x174f8a0 1: Segment violation
+0x174f8a0 1: Error. i>=0 and i<cols.size() :cpp/bcp_lp.cpp :53:Oct 14 2014
+0x174f8a0 1: Some error.
+0x174f8a0 1: Error. cu[i].ub[j] >= ub[j]-1e-6 :cpp/bcp_cuts.cpp :589:Oct 14 2014
+0x174f8a0 1: Some error.
+0x174f8a0 5: Error. i>=0 and i<cols.size() :cpp/bcp_lp.cpp :53:Oct 14 2014
+0x174f8a0 5: Some error.
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 9: Error. 0 :cpp/probl_csp1.cpp :1872:Oct 14 2014
+0x174f8a0 10: Error. i>=0 and i<cols.size() :cpp/bcp_lp.cpp :53:Oct 14 2014
+0x174f8a0 10: Some error.
+0x174f8a0 15: Error. not cols[i].slackCut :cpp/bcp_lp.cpp :54:Oct 14 2014
+0x174f8a0 15: Some error.
+0x174f8a0 20: Error. i>=0 and i<cols.size() :cpp/bcp_lp.cpp :53:Oct 14 2014
+0x174f8a0 20: Some error.
+0x174f8a0 22: Error. cu[i].ub[j] >= ub[j]-1e-6 :cpp/bcp_cuts.cpp :589:Oct 14 2014
+0x174f8a0 22: Some error.
+0x174f8a0 26: Error. i>=0 and i<cols.size() :cpp/bcp_lp.cpp :53:Oct 14 2014
+0x174f8a0 26: Some error.
+0x17508a0 1: Could not addcols:
+0x17508a0 1: Some error.
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 2: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 3: Could not addcols:
+0x17508a0 3: Some error.
+0x17508a0 4: Could not addcols:
+0x17508a0 4: Some error.
+0x17508a0 5: Could not addcols:
+0x17508a0 5: Some error.
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 5: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 0: ?: No such file or directory
+0x17508a0 15: 
+Upper bnd on 972: 0, val:0.488006:
+0x17508a0 15: Some error.
+0x17508a0 15: 
+Upper bnd on 972: 0, val:0.488006:
+0x17508a0 15: Some error.
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 6: Error. 0 :cpp/probl_csp1.cpp :1876:Oct 28 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 45: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 28: Error. 0 :cpp/probl_csp1.cpp :1878:Oct 29 2014
+0x17508a0 1: Error. 1==nTry :cpp/bcp.cpp :55:Oct 30 2014
+0x17508a0 1: Some error.
+0x174d880 1: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 1: Some error.
+0x174d880 2: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 2: Some error.
+0x174d880 3: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 3: Some error.
+0x174d880 4: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 4: Some error.
+0x174d880 5: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 5: Some error.
+0x174d880 6: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 6: Some error.
+0x174d880 7: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 7: Some error.
+0x174d880 8: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 8: Some error.
+0x174d880 9: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 9: Some error.
+0x174d880 10: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 10: Some error.
+0x174d880 11: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 11: Some error.
+0x174d880 12: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 12: Some error.
+0x174d880 1: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 1: Some error.
+0x174d880 2: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 2: Some error.
+0x174d880 3: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 3: Some error.
+0x174d880 4: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 4: Some error.
+0x174d880 5: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 5: Some error.
+0x174d880 6: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 6: Some error.
+0x174d880 7: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 7: Some error.
+0x174d880 8: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+0x174d880 8: Some error.
+hard28 1: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 1: Some error.
+hard28 2: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 2: Some error.
+hard28 3: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 3: Some error.
+hard28 4: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 4: Some error.
+hard28 5: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 5: Some error.
+hard28 #1: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 #1: Some error.
+hard28 #2: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 #2: Some error.
+hard28 #3: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 #3: Some error.
+hard28 #4: Error. 8.1 == dErr :cpp/bcp.cpp :54:Oct 30 2014
+hard28 #4: Some error.

@@ -1,0 +1,51 @@
+
+2
+24
+     5     23
+     3     55
+
+
+
+
+The initial LP solution: time=0
+
+
+File: n1  Instance No. 1
+Fri Feb 10 15:34:34 2006
+
+LP solution: lpval=11.6875 lpbnd=12
+
+7:   3  3  obj=1\\
+4.1875:   0  8  obj=1\\
+0.5:   4  1  obj=1\\
+
+
+
+
+
+
+File: n1  Instance No. 1
+Fri Feb 10 15:34:34 2006
+
+LP0 Time: 0 IPTime: 0 The best integer solution (12):
+
+7:   3  3  obj=1\\
+4:   0  8  obj=1\\
+1:   2  2  obj=1\\
+
+
+
+The last LP solution 
+
+
+File: n1  Instance No. 1
+Fri Feb 10 15:34:34 2006
+
+LP solution: lpval=12 lpbnd=12
+
+7:   3  3  obj=1\\
+4.1875:   0  8  obj=1\\
+0.5:   4  1  obj=1\\
+
+
+

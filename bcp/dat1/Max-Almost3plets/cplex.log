@@ -1,0 +1,71 @@
+
+Log started (V12.6.1.0) Tue Mar 10 16:56:39 2015
+
+
+Problem 'last.lp' read.
+Read time = 0.01 sec. (0.55 ticks)
+Tried aggregator 1 time.
+LP Presolve eliminated 0 rows and 135 columns.
+Aggregator did 233 substitutions.
+Reduced LP has 484 rows, 2333 columns, and 33501 nonzeros.
+Presolve time = 0.00 sec. (3.61 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual infeasibility =      11699883.000000
+Iteration:   119   Dual objective     =           232.000000
+Iteration:   180   Dual objective     =           238.755868
+Iteration:   242   Dual objective     =           265.168649
+
+Dual simplex - Optimal:  Objective =  2.6600000000e+02
+Solution time =    0.01 sec.  Iterations = 282 (118)
+Deterministic time = 14.14 ticks  (1161.70 ticks/sec)
+
+
+Log started (V12.6.0.0) Tue Mar 10 16:57:27 2015
+
+
+Problem 'last.lp' read.
+Read time = 0.03 sec. (0.55 ticks)
+Tried aggregator 1 time.
+LP Presolve eliminated 0 rows and 135 columns.
+Aggregator did 233 substitutions.
+Reduced LP has 484 rows, 2333 columns, and 33501 nonzeros.
+Presolve time = 0.00 sec. (3.61 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual infeasibility =      11699883.000000
+Iteration:   119   Dual objective     =           232.000000
+Iteration:   180   Dual objective     =           238.755868
+Iteration:   242   Dual objective     =           265.168649
+
+Dual simplex - Optimal:  Objective =  2.6600000000e+02
+Solution time =    0.01 sec.  Iterations = 282 (118)
+Deterministic time = 14.14 ticks  (1204.96 ticks/sec)
+
+
+Log started (V12.6.0.0) Tue Mar 10 16:57:53 2015
+
+
+Problem 'last.lp' read.
+Read time = 0.01 sec. (0.55 ticks)
+New value for feasibility tolerance: 1e-07
+New value for reduced cost optimality tolerance: 1e-08
+Tried aggregator 1 time.
+LP Presolve eliminated 0 rows and 135 columns.
+Aggregator did 233 substitutions.
+Reduced LP has 484 rows, 2333 columns, and 33501 nonzeros.
+Presolve time = 0.00 sec. (3.61 ticks)
+Initializing dual steep norms . . .
+
+Iteration log . . .
+Iteration:     1   Dual infeasibility =      11699883.000000
+Iteration:   119   Dual objective     =           232.000000
+Iteration:   180   Dual objective     =           238.755868
+Iteration:   242   Dual objective     =           265.168649
+
+Dual simplex - Optimal:  Objective =  2.6600000000e+02
+Solution time =    0.02 sec.  Iterations = 282 (118)
+Deterministic time = 14.14 ticks  (909.11 ticks/sec)
+

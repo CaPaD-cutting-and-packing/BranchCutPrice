@@ -1,0 +1,18 @@
+For most instance classes, the default params (obtained when running without bcp.cfg in the directory; then it is created) seem good. For difficult instances, try changing maxCuts to 0,1,2 and more. Other issues:
+
+NUMERICAL DIFFICULTIES. For some numerically difficult cases (e.g., very many or very small items), veps should be increased to enable cautious optimality test - leading to unnecessarily more nodes processed in other non-IRUP instances just to prove the bound. In some long branching cases, the higher bound can be 'observed' from the progress before veps grips. Sometimes it helps, set CSP1.bb_eps to 1e-8 or even smaller. For reliability in LP solution, rc_eps has been defaulted to 1e-8. CPLEX LP Optimizer parameters can be important as well, see param section [CPLEX]. By default, now using tighter settings there.
+SIMILARLY, the tight rc_eps (which is kinda veps for the col gen subproblem) can lead to root LP taking very long! (Tailing off)
+
+TOO LONG COLUMN GENERATION. For some instances with many/small items, the B&B knapsack solver gets too slow. Then (see param BB.nStepsWAYTOOMUCH) the solution is restarted using a KP solver and arc-flow branching, using the settings CSP1.fRootPricing=1, BCP.fLocalUB=0 and BCP.nBranch=1, CSP1.nHP=1, and maxCuts=0. Then seems better BCP.fLocaLReduce=0 with Subgr.nIterMax=0 and CSP1.fModelEquality=1. Note that this change would apply to all instances solved in this program call.
+
+AFF BRANCHING.
+Note that ArcFlowFormulation branching is faster sometimes (e.g., on hard28) but much slower on some instances - e.g., #29 and #38 from 53NIRUPs.dat. To switch it on, see above (except root pricing).
+
+BETTER PRIMAL SOLUTIONS. Increasing rounding frequency _might_ help, as well as MIPTimeLimit. The MIPs are saved in rmpMIP.lp. If you resolve manualy, set CUTUP to the target IP value you need. If you have MIP rounding switched off, you can still take LPModelNow.lp, delete branching constraints and try to solve as MIP.
+
+To avoid rewriting the param file bcp.cfg, set ~sys.writeParams to 0.
+
+To change the level of output, adjust ~sys.glbOutputLevel or corresp. params in the sections.
+
+Gleb belov
+29.10.2014

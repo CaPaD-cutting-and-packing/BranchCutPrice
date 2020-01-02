@@ -1,0 +1,93 @@
+
+Subject:
+Re: Bug with your code
+From:
+Gleb Belov <bg37@gmx.net>
+Date:
+09/12/2012 11:34 AM
+To:
+"Ethan L. Schreiber" <ethan@cs.ucla.edu>
+
+Dear Ethan,
+
+thank you. When I implemented this pointer -> iterator conversion, I was sure it could go wrong in an optimized code on some platform. However, it worked fine in x86 Linux.
+
+The point is, it is impossible to define
+/  class X {//
+//     list<X>::iterator it;//
+//  };//
+/for some reasons! At least it was impossible then. So, I noticed that an iterator was internally a pointer to data minus 8 bytes or so. To correctly compute this difference, the sample iterator should physically exist! So it could be helped by initializing it or declaring volatile or static.
+
+In my next software project I was not that risky any more. To save time, in every 100th fathoming I went throw the list of `done´ nodes and deleted those marked as `fathomed´; otherwise, I only marked them so.
+
+best,
+gleb
+
+On 09/11/2012 11:07 PM, Ethan L. Schreiber wrote:
+> Hi Gleb,
+>
+> I have run into a bug in your code and fixed it. I thought you might
+> be interested. Inside of mytools.h, you have a template function
+> called Ptr2Iter which is used by MarkFathomed in node.h. You pass a
+> pointer to a Node that is contained in a list and this function is
+> supposed to return an iterator to that Node.
+>
+> Ptr2Iter works fine on my Ubuntu laptop at home, however, it does not
+> work on either of the servers I run my experiments on. To be honest, I
+> don't quite understand how Ptr2Iter works but it seems to rely on the
+> list iterator being implemented in a particular way. The bugs that
+> were caused on the servers were quite confusing. I would get
+> segmentation faults, but if I then printed out the pointer and
+> iterator inside of Ptr2Iter, the segmentation faults went away. This
+> is a so called Heisenbug (http://en.wikipedia.org/wiki/Heisenbug). I
+> suspect that you expect the memory for the iterator is laid out in a
+> certain manner that is not necessarily true with all compilers.
+>
+> I modified MarkFathomed to not use Ptr2Iter but instead search through
+> the list of Nodes to find the object. This changes your O(1) code to
+> O(n) in the size of the nodes list but I don't suspect this should
+> affect performance as I don't think that list gets very large.
+>
+> To fix the problem, I added some code in node.h. I added a comparator
+> struct and modified the code for void SolutionTree::MarkFathomed(Node
+> *pn) as follows:
+>
+> template <typename T>
+>    struct address_equals {
+>      address_equals(T * ptr) : ptr_(ptr) {}
+>      bool operator()(T & element) { return &element == ptr_; }
+>      T * ptr_;
+>    };
+>
+> inline void SolutionTree::MarkFathomed(Node* pn) {
+>    INode itF = std::find_if (nodes.begin(), nodes.end(),
+> address_equals<Node>(pn));
+>    itF->state = Node::fathomed;
+>    flist.splice(flist.end(), nodes, itF);
+>
+>    //MarkFathomed(Ptr2Iter<INode>(pn));
+> }
+>
+>
+> You will notice that I left the original implementation of
+> MarkFathomed there but commented it out so you see what it used to
+> look like. I have tested the code and it still works after the change.
+>   I read about converting from pointers to objects to iterators to
+> objects and found that there is no good standard way to do it. I found
+> this article: http://www.gamedev.net/topic/215315-how-to-convert-pointer-to-iterator/
+> and used a suggestion from there to implement what I did.
+>
+> Alternatively, I imagine that the code that calls MarkFathomed can be
+> changed to only use iterators and not use the Node *parent, sonLeft
+> and sonRight pointers contained with the Node object. However, while
+> that seems like the best solution, it is a much bigger undertaking
+> than I want to pursue for my purposes.
+>
+> Please let me know if you have any better ideas for what to do here.
+> Otherwise, hopefully my solution is helpful to you if you ever need to
+> use this code again.
+>
+> Sincerely,
+>
+> Ethan
+

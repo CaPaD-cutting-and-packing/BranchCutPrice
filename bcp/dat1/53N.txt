@@ -1,0 +1,63 @@
+
+
+BCP: Version 2.0.  Build Nov 14 2012  12:51:09
+Wed Nov 14 12:59:36 2012
+[BB]: nStepsTooMuch:1e+06 fEvenIfNotFound:0 outputLevel:4 [BBCuts]: nStepsTooMuch:5e+06 fCheckBnd:0 outputLevel:4 [BCP]: TimeLimit:900 fNoOpt:0 nRunsMax:1 maxDepth:999999 nBFSDFS:1 nDive:2 BrStratRL:0 fCGTailOff:0 fBranchPsCosts:0 nBranch:0 BrVarFrac:0.5 dInfeasFracPart:0.001 Alfa1:0 wTillUB:0 fRedCostBnd:0 fLocalReduce:1 fLocalUB:1 nReducePool:0 fSkipColGenAtLPBound:0 fUseLagrange:0 RNDNodeInterval:60 RNDInterval:60 RNDColInterval:30 MIPTimeLimit:0 MIPNodeInterval:200 MIPInterval:40 fOriginalRedCost:1 M__:100000 fPrintProblem:1 fPrintContSol0:1 fPrintContSolBest:1 fPrintIntSolBest:1 fPrintComplicated:1 fCheckGivenSol:0 outputLevel:4 outputInterval:1 [BCP2]: nVarSel:3 outputLevel:4 [BCP_Cuts]: firstCutAfterNode:0 iterRootMax:10 iterMax:3 kNodeNewCuts:1 maxCuts:5 cutType:1 nPoolIterMax:30 nCutsAddedMax:10 nIterTailOff:15 rndViolDev:0.001 CGNormMax:0 CGFracParts:1 cntDel0:1 cntDel0inc:1.2 delReset0:30 delResetInc:1.05 fCheckCuts:0 [CP22]: fFirstCut1stD:1 fSortPieces:1 fMergePieces:1 nStartBasis:2 nStepsMin0:4096 nStepsMinInc:1.01 deps:1e-08 bb_eps:1e-08 RPEMax:10 outputLevel:4 [CP22_SVC]: iterMax:20 patternUseRatio:0.5 outputLevel:4 [CSP1]: fModelEquality:0 fSortPieces:1 fMergePieces:1 fEffectiveL:1 nStartBasis:4 nStepsMin0:8192 nStepsMinInc:1.01 deps:1e-08 bb_eps:1e-08 RPEMax:10 fTestMSVC:0 fSP2Relaxation:0 nLm:0 fRootPricing:0 fInteractiveCapacity:0 CVRPfrac:0.5 nHP:0 cost_perturb_max:1e-06 cost_perturb_rndinit:0.55 outputLevel:4 [CSP1_MSVC]: iterMax:200 fRestrictNOpen:0 NOpenMaxInitial:10 patternUseRatio:1 pow_l:1.02 weighScheme:0 nObjective:0 mosReduc:0.7 mosP:0 mosR__:1.02 mosRR:1.001 msReduc:0.7 msP:0 msR__:1.02 msRR:1.001 rndCMCM:1.5 outputLevel:4 [CSP1_SVC]: iterMax:20 patternUseRatio:1 pow_l:1.02 outputLevel:4 [PMP1]: deltaKpercent:1 pF:1 pV:0 nStartBasis:1 CSPOutpLev:1 CSPTiLim:30 BPPTiLim:30 fSequence:0 seqFreq:0.1 outputLevel:4 [Solver]: problemType:1 instFirst:1 instLast:2147483647 fTestParams:0 nTries:30 nRounds:3 nParts:3 splitTimeLimit:50 maxL:0 minL:0 outputLevel:4 [Subgr]: iterMaxRatio:0.15 weight1:1 rhoDef:0.99 normToThe:2 outputLevel:4 [~sys]: writeParams:1 glbOutputLevel:1 
+
+ # status   IP_best    LPBnd  LPBnd0      time  timeLP0  tLPbest  tIPbest NNode NIter LPCol IPCol [remark]
+*) IPBest*: found with MIP optimizer
+
+  1   OPT        4        4 3.333333        0        0        0        0     0     0    25    25 'BPP 02015007_0918'
+  2   OPT       10       10        9     0.02        0     0.02        0     0     1    74    74 'BPP 02015007_0918' nIRUP I
+  3   OPT       16       16 15.00704        0        0        0        0     0     0   187   187 'BPP 04000107_0697'
+  4   OPT       16       16       15      0.1     0.02      0.1        0     0     1   210   219 'BPP 04005007_0612' nIRUP I
+  5   OPT       20       20       19     0.04        0     0.04        0     0     1   168   169 'BPP 04005009_0361' nIRUP I
+  6   OPT       21       21 19.99937     0.34     0.04     0.34     0.02     6    18   414   426 'BPP 06000106_0782' nIRUP
+  7   OPT       27       27       26     0.06     0.02     0.06        0     0     1   271   274 'BPP 06000110_0195' nIRUP I
+  8   OPT       23       23       22      0.1     0.02      0.1        0     0     1   311   328 'BPP 06005007_0033' nIRUP I
+  9   OPT       22       22       21     0.22     0.02     0.22        0     0     1   366   374 'BPP 06005007_0382' nIRUP I
+ 10   OPT       24       24       23     0.16     0.02     0.16     0.02     0     4   283   298 'BPP 06005008_0755' nIRUP I
+ 11   OPT       25       25       24     0.12     0.02     0.12        0     0     1   324   325 'BPP 06015006_0067' nIRUP I
+ 12   OPT       31       31       30     0.06     0.02     0.06     0.02     0     1   228   234 'BPP 06015009_0403' nIRUP I
+ 13   OPT       34       34       33     0.02        0     0.02        0     0     1   220   222 'BPP 06015010_0771' nIRUP I
+ 14   OPT       24       24       23     0.06     0.02     0.06     0.02     0     1   269   277 'BPP 06025005_0639' nIRUP I
+ 15   OPT       28       28 26.99971     0.24     0.06     0.24     0.02     2    10   565   579 'BPP 08000107_0624' nIRUP
+ 16   OPT       27       27       26     1.02     0.06     1.02        0     8    21   683   759 'BPP 08005006_0862' nIRUP
+ 17   OPT       29       29 27.99904      0.5     0.04      0.5        0     8    20   456   472 'BPP 08005007_0394' nIRUP
+ 18   OPT       38       38       37      0.2     0.08      0.2     0.02     0     1   535   541 'BPP 10000107_0508' nIRUP I
+ 19   OPT       36       36 34.99893     1.22     0.08     1.22     0.02    26    48   648   736 'BPP 10000107_0733' nIRUP I
+ 20   OPT       39       39 37.99908     7.34     0.06     7.34     0.02    38    72   534   601 'BPP 10000108_0257' nIRUP I
+ 21   OPT       45       45       44     0.16     0.06     0.16     0.02     0     1   539   545 'BPP 10015007_0464' nIRUP I
+ 22   OPT       45       45 43.99988     0.18      0.1     0.18     0.02     0     1   722   728 'BPP 12000107_0894' nIRUP I
+ 23   OPT       45       45 43.99892     4.12      0.1     4.12     0.02    64   109   724   857 'BPP 12000108_0035' nIRUP
+ 24   OPT       57       57       56     0.34     0.06     0.34     0.04     0     1   508   511 'BPP 12000109_0917' nIRUP I
+ 25   OPT       61       61       60     4.68     0.04     4.68     0.04     0     1   497   502 'BPP 12000110_0655' nIRUP I
+ 26   OPT       52       52       51     0.24     0.08     0.24     0.04     0     1   616   625 'BPP 12005007_0138' nIRUP I
+ 27   OPT       45       45 43.99912     24.3      0.1     24.3     0.02    40    73   705   782 'BPP 12005007_0180' nIRUP
+ 28   OPT       44       44 42.99973     0.76     0.15     0.76     0.02     4    13   821   837 'BPP 12005007_0324' nIRUP
+ 29   OPT       55       55 53.99457     0.15     0.04     0.15     0.08     0     1   565   567 'BPP 12005008_0450' nIRUP I
+ 30   OPT       53       53 51.99627     0.18     0.08     0.18     0.02     0     1   541   543 'BPP 12015007_0165' nIRUP I
+ 31   OPT       62       62 60.96667     0.16     0.08     0.16     0.04     0     1   437   440 'BPP 12015009_0740' nIRUP I
+ 32   OPT       77       77       76     0.32     0.12     0.32     0.04     0     1   571   577 'BPP 14005010_0447' nIRUP I
+ 33   OPT       63       63       62     0.22     0.08     0.22     0.04     0     1   606   607 'BPP 14015007_0121' nIRUP I
+ 34   OPT       65       65       64     0.26     0.08     0.26     0.04     0     2   599   617 'BPP 14015008_0373' nIRUP I
+ 35   OPT       62       62 60.99796      7.5     0.15      7.5     0.04    96   170   809   960 'BPP 16000107_0014' nIRUP
+ 36   OPT       66       66       65      0.7     0.15      0.7     0.06     6    16   859   893 'BPP 16000108_0149' nIRUP
+ 37   OPT       84       84 82.96667     6.04     0.08     6.04     0.06     0     1   642   642 'BPP 16000110_0279' nIRUP I
+ 38   OPT       78       78       77     0.26      0.1     0.26     0.08     0     1   650   653 'BPP 16005009_0001' nIRUP I
+ 39   OPT       79       79 77.97917     0.26      0.1     0.26     0.06     0     1   681   681 'BPP 16005009_0161' nIRUP I
+ 40   OPT       72       72 70.97887     0.46     0.12     0.46     0.18     0     2   817   835 'BPP 16015007_0206' nIRUP I
+ 41   OPT       85       85 83.96667     0.26     0.12     0.26     0.06     0     1   535   543 'BPP 16015009_0981' nIRUP I
+ 42   OPT       76       76 74.99826     5.98     0.24     5.98     0.08   142   228   979  1130 'BPP 18000108_0359' nIRUP
+ 43   OPT       76       76       75     11.4     0.16     11.4     0.08    24    50   897   968 'BPP 18000108_0716' nIRUP
+ 44   OPT       88       88 86.98571     0.42     0.16     0.42     0.08     0     1   840   850 'BPP 18000110_0439' nIRUP I
+ 45   OPT       88       88       87     0.29     0.15     0.29      0.2     0     1   699   702 'BPP 18015008_0821' nIRUP I
+ 46   OPT      105      105      104     0.36     0.18     0.36     0.22     0     2   649   668 'BPP 18015010_0605' nIRUP I
+ 47   OPT       77       77       76     0.54     0.26     0.54     0.08     0     3  1072  1085 'BPP 20000107_0119' nIRUP I
+ 48   OPT       77       77       76     1.44     0.29     1.44     0.08     6    16  1100  1147 'BPP 20000108_0025' nIRUP
+ 49   OPT       84       84       83     7.44     0.26     7.44     0.36    30    58  1123  1220 'BPP 20000108_0175' nIRUP
+ 50   OPT       86       86 84.99747      169     0.22      169     0.08  6462 10136   949  1344 'BPP 20005008_0124' nIRUP
+ 51   OPT       94       94       93     0.34     0.16     0.34      0.2     0     1   834   837 'BPP 20005009_0200' nIRUP I
+ 52   OPT      103      103      102     1.11     0.44     1.11      0.5     0     1   904   926 'BPP 20005010_0953' nIRUP I
+ 53   OPT       84       84 82.99533      0.5     0.18      0.5     0.08     0     1   897   923 'BPP 20015007_0637' nIRUP I
+ 54   OPT      113      113 111.9722      0.4     0.26      0.4     0.12     0     1   733   742 'BPP 20015009_0272' nIRUP I
